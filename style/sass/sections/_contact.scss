@@ -1,0 +1,174 @@
+#contact {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    padding: 0;
+    height: 92vh;
+}
+#contact-left {
+    background: linear-gradient(to bottom, #4a4675, #1b183b);
+}
+#contact-right {
+    background-color: #d9d9d9;
+}
+#contact-layout-wrapper {
+    position: absolute;
+    @include flexHorVerCenter;
+    width: 100%;
+    height: 100%;
+}
+#contact-layout {
+    display: grid;
+    grid-template-columns: minmax(auto, 550px) auto minmax(auto, 320px);
+    justify-content: center;
+    align-items: stretch;
+    margin: 0 30px;
+    width: 100%;
+}
+#contact-form {
+    @include flexColumn(10px);
+
+    input, textarea {
+        padding: 12px;
+        width: 90%;
+    }
+    input {
+        font-size: 1.1em;
+    }
+    textarea {
+        font-size: 1.3em;
+    }
+}
+#contact-message-header {
+    margin-bottom: 30px;
+
+    h4 {
+        padding-bottom: 15px;
+        font-size: 3em;
+        font-weight: 600;
+        color: white;
+    }
+    div {
+        @include bottomLine(4px, $highlightColor);
+        width: 20%;
+    }
+}
+#contact-message-submit {
+    margin-top: 15px;
+    padding: 15px 25px;
+    width: fit-content;
+    @include buttonReset1($highlightColor);
+    color: white;
+}
+#contact-info {
+    @include flexColumn(40px);
+    padding: 20px 35px;
+    box-sizing: border-box;
+    background-color: white;
+}
+.contact-info-key {
+    margin-bottom: 15px;
+    color: $darkerText2;
+}
+.contact-info-values {
+    @include flexColumn(5px);
+    color: $lighterText;
+}
+#contact-info-adress {
+    width: 100%;
+}
+/* Contact - Responsive */
+@media only screen and (max-width: 900px) {
+    #contact-layout {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        "message info"
+        "location location";
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    #contact-message {
+        grid-area: message;
+        padding: 20px 35px;
+        background-color: white;
+        text-align: center;
+        border-right: 1px solid #e4e4e4;
+    }
+    #contact-message-header {
+        h4 {
+            padding: 0;
+            font-size: 2.6em;
+            color: $darkerText2;
+        }
+        div {
+            display: none;
+        }
+    }
+    #contact-form {
+        align-items: center;
+    }
+    #contact-form input, #contact-form textarea {
+        padding: 7px;
+        width: 100%;
+        border: 1px solid $darkBorderLine;
+        border-radius: 8px;
+    }
+    #contact-form input {
+        font-size: 0.9em;
+    }
+    #contact-form textarea {
+        height: 4em;
+    }
+    #contact-message-submit {
+        align-self: flex-start;
+    }
+    #contact-info {
+        grid-area: info;
+        border-left: 1px solid #e4e4e4;
+        gap: 28px;
+    }
+    #contact-layout iframe {
+        grid-area: location;
+    }
+}
+@media only screen and (max-width: 650px) {
+    #contact-message, #contact-info {
+        padding: 25px 20px;
+    }
+}
+@media only screen and (max-width: 580px) {
+    #contact-layout {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "message"
+        "info"
+        "location";
+    }
+    #contact-message {
+        border-bottom: 1px solid $darkBorderLine;
+    }
+    #contact-info {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        text-align: center;
+        gap: 0;
+        font-size: 0.9em;
+    }
+}
+@media only screen and (max-width: 490px) {
+    #contact {
+        grid-template-rows: 950px;
+        height: unset;
+    }
+    #contact-message-header h4 {
+        font-size: 2.2em;
+    }
+    #contact-info {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: left;
+    }
+    #contact-info-adress {
+        height: 230px;
+    }
+}

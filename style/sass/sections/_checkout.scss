@@ -1,0 +1,137 @@
+/* Checkout - Title */
+#checkout-title {
+    h1 {
+        margin-bottom: 12px;
+        font-size: 2.5em;
+        text-transform: capitalize;
+        color: $darkerText;
+    }
+    p {
+        font-size: 0.9em;
+        color: $lighterText;
+    }
+}
+/* Checkout - Layout */
+#checkout-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2.5vw;
+    margin-top: 60px;
+}
+.checkout-product-image {
+    width: 80px;
+    height: auto;
+}
+/* Checkout - Summary */
+#checkout-products-show {
+    @include flexBetweenCenter(initial);
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+}
+#back-to-cart {
+    font-size: 15px;
+    color: gray;
+}
+#checkout-product-list {
+    margin-top: 15px;
+}
+.checkout-product {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.checkout-product-info {
+    @include flexColumn(8px);
+    font-weight: 600;
+}
+.checkout-product-price {
+    color: $lighterText;
+}
+.checkout-info {
+    @include flexBetweenCenter(initial);
+    padding: 10px 0;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+#more-in-cart {
+    text-align: center;
+    font-size: 24px;
+    color: $darkerText;
+}
+/* Checkout - Summary - Discount */
+#checkout-discount {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+}
+#checkout-enter-discount {
+    font-size: 1.1em !important;
+}
+#checkout-apply-discount {
+    @include buttonReset1($highlightColor);
+    color: white;
+}
+/* Checkout - Summary - Final */
+#finish-order {
+    padding: 20px;
+    width: 100%;
+    @include buttonReset1($highlightColor);
+    color: white;
+}
+/* Checkout - Responsive */
+@media only screen and (max-width: 1100px) {
+    #checkout-cards {
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-areas:
+        "a a a a b b b b"
+        "c c c c c . . .";
+    }
+    #customer-basic-info {
+        grid-area: a;
+    }
+    #customer-shopping-methods {
+        grid-area: b;
+    }
+    #checkout-summary {
+        grid-area: c;
+    }
+}
+@media only screen and (max-width: 766px) {
+    $gapCheckoutCardsMediumScale: 40px;
+    #checkout-cards {
+        display: flex;
+        flex-direction: column;
+        gap: $gapCheckoutCardsMediumScale;
+        margin-top: 50px;
+    }
+    #customer-shopping-methods {
+        gap: $gapCheckoutCardsMediumScale;
+    }
+}
+@media only screen and (max-width: 350px) {
+    #checkout-title {
+        text-align: center;
+        
+        h1 {
+            font-size: 2em;
+        }
+    }
+    #checkout-cards {
+        margin-top: 40px;
+    }
+    .radio-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #checkout-product-list {
+        display: flex;
+        overflow: hidden;
+        gap: 10px;
+        padding: 10px 0;
+        @include scrollbar(horizontal);
+    }
+    .checkout-product-info {
+        width: 90px;
+    }
+}

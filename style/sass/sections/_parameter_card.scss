@@ -1,0 +1,57 @@
+.parameters-wrapper {
+    padding: 20px;
+    border: 1px solid $lightBorderLine;
+}
+.parameter-header {
+    margin-bottom: 25px;
+    @include bottomLine(1px, $lightBorderLine);
+
+    h5 {
+        display: inline-block;
+        padding-bottom: 0.5em;
+        font-size: 1.2em;
+        font-weight: 600;
+        @include bottomLine(2px, $highlightColor);
+    }
+}
+.parameters-list {
+    @include flexColumn(15px);
+    color: $darkerText;
+}
+.parameter-label {
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+
+    &:before {
+        content: " ";
+        display: inline-block;
+        margin-right: 10px;
+        width: 17px;
+        height: 17px;
+        border: 1px solid $lightBorderLine;
+        border-radius: 50%;
+    }
+}
+.parameter-select-field {
+    display: none;
+}
+.parameter-select-field:checked+label:before {
+    content: "\2713";
+    color: white;
+    text-align: center;
+    background-color: $lightHighlightColor;
+    border: 1px solid $lightHighlightColor;
+}
+.parameter-selected {
+    ::before {
+        content: "\2713";
+        box-sizing: border-box;
+        border: none;
+        background-color: $highlightColor !important;
+    }
+}
+.parameter-count {
+    margin-left: 10px;
+    color: $lighterText2;
+}

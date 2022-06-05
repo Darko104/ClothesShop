@@ -1,0 +1,433 @@
+/* Navigation - initial row */
+.navigation-initial {
+    @include flexBetweenCenter(initial);
+    padding: 0 30px;
+    @include bottomLine(1px, $lightBorderLine);
+}
+.highlighted-nav {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.nav-bar {
+    display: none;
+    padding: 1.3em 0.5em 1.3em 0;
+    font-size: 1.2em;
+    color: $lighterText;
+    cursor: pointer;
+
+    &:hover {
+        color: $highlightColor;
+    }
+}
+#page-links {
+    @include flexBetweenCenter(1.5em);
+
+    li {
+        position: relative;
+
+        a {
+            display: inline-block;
+            padding: 1.5em 0.5em;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: 0.5s;
+
+            &:hover {
+                color: $highlightColor;
+            }
+        }
+    }
+}
+.active-page {
+    color: $highlightColor;
+}
+.extend-link {
+    margin-left: 6px;
+    font-size: 0.7em;
+}
+#action-links {
+    @include flexBetweenCenter(1.5em);
+
+    > li {
+        position: relative;
+    }
+    > li > a {
+        padding: 7px;
+    }
+}
+.nav-icon {
+    width: 20px;
+    height: 20px;
+}
+#products-in-cart {
+    position: absolute;
+    top: -8px;
+    left: 20px;
+    @include flexHorVerCenter;
+    min-width: 1.3rem;
+    min-height: 1.3rem;
+    font-size: 0.7rem;
+    background-color: $highlightColor;
+    border-radius: 50%;
+
+    span {
+        color: white;
+    }
+}
+/* Navigation - Extended Link */
+.link-extension {
+    position: absolute;
+    z-index: 1;
+    display: none;
+
+    ul {
+        padding: 15px 25px;
+        color: $lighterText;
+        border-top: 2px solid $lightBorderLine;
+        background-color: white;
+    
+        li {
+            padding: 10px 0;
+            width: fit-content;
+            white-space: nowrap;
+    
+            &:first-child {
+                padding-top: 0;
+            }
+            &:last-child {
+                padding-bottom: 0;
+            }
+        }
+    }
+}
+/* Navigation - User menu */
+#action-user {
+    display: flex;
+    justify-content: center;
+    // background-color: rgb(235, 235, 235);
+    // border-radius: 50%;
+}
+#nav-user-menu {
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+}
+.nav-menu-arrow {
+    width: 24px;
+    height: 17px;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+#nav-arrow-logged-off {
+    background-color: $backgroundColorLoggedOff;
+}
+#nav-arrow-logged-in {
+    background-color: rgb(73, 188, 255);
+}
+#nav-user-menu-box {
+    overflow: hidden;
+    color: $darkerText;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.nav-user-box-list {
+    text-transform: capitalize;
+
+    li {
+        border-bottom: 1px solid #ebebeb;
+        color: $lighterText;
+        cursor: pointer;
+
+        i {
+            width: 20px;
+            text-align: center;
+        }
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+    a {
+        display: block;
+        padding: 12px 12px;
+        color: inherit;
+        transition: $fastTransition;
+
+        &:hover {
+            color: rgb(43, 170, 255);
+        }
+    }
+}
+#nav-user-box-logged-off {
+
+    .nav-user-box-list {
+        min-width: 180px;
+        background-color: $backgroundColorLoggedOff;
+    }
+}
+#nav-user-box-logged-in {
+
+    .nav-user-box-list {
+        padding: 0 10px;
+        min-width: 200px;
+        width: 150px;
+        border: 1px solid $lightBorderLine;
+
+        a {
+            padding-left: 0;
+            padding-right: 0;
+            font-size: 0.9em;
+        }
+    }
+}
+#user-box-basic-info {
+    padding: 32px 0;
+    text-align: center;
+    color: white;
+    background-color: rgb(73, 188, 255);
+}
+// #user-box-avatar {
+//     margin-bottom: 0.6em;
+//     width: 60px;
+//     height: auto;
+//     border: 2px solid white;
+//     border-radius: 50%;
+// }
+#user-box-name {
+    margin-bottom: 5px;
+    font-size: 1.3em;
+}
+#user-box-email {
+    font-size: 0.9em;
+}
+#user-box-log-off {
+    color: rgb(255, 94, 94) !important;
+}
+/* Navigation - Extended Row */
+#extended-navigation {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    background-color: white;
+    border-bottom: 1px solid $lightBorderLine;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 5px 5px;
+    display: none;
+}
+#extended-navigation-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 30px;
+    box-sizing: border-box;
+}
+.extended-nav-list {
+    text-transform: capitalize;
+
+    .enl-title {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 25px;
+    }
+    ul {
+        font-size: 16px;
+        @include flexColumn(9px);
+        color: $lighterText;
+
+        a {
+            color: inherit;
+        }
+    }
+}
+#extended-nav-image {
+    width: 320px;
+    height: 200px;
+    background-image: url('../../assets/images/nav_img.jpg');
+
+    .promo-card-desc {
+        right: 20px;
+        bottom: 2vw;
+        text-align: right;
+        line-height: 30px;
+        word-break: break-all;
+        font-size: 1vw;
+    }
+
+    #mid-row {
+        font-size: 1.3em;
+        
+        span {
+            color: goldenrod;
+        }
+    }
+}
+/* Current page */
+#current-page {
+    padding: 30px 3%;
+
+    ul {
+        display: flex;
+        gap: 10px;
+
+        li:not(:first-child) {
+            position: relative;
+
+            &::before {
+                position: absolute;
+                left: -10px;
+                content: ">";
+            }
+        }
+    }
+    li {
+        padding: 0 10px;
+
+        &:first-of-type {
+            padding-left: 0;
+        }
+        &:last-of-type {
+            padding-right: 0;
+        }
+    }
+}
+/* Navigation - Acccount page */
+#account-nav {
+    display: grid;
+    grid-template-columns: $accountAsideColumnLength $accountMainColumnLength;
+    @include bottomLine(2px, $lightBorderLine);
+
+    > * {
+        padding: 0 $accountPadding;
+    }
+}
+#account-nav-logo {
+    display: flex;
+    align-items: center;
+    border-right: $accountAsideColumnRightBorder;
+
+    img {
+        width: 100%;
+    }
+}
+#account-nav-info {
+    @include flexBetweenCenter(initial);
+}
+#account-usertype-name {
+    text-transform: capitalize;
+}
+#user-type {
+    color: $lighterText2;
+}
+#user-name {
+    margin-left: 10px;
+    font-weight: 600;
+    color: $darkerText;
+}
+/* Navigation - Aside (For small devices) */
+#aside-menu {
+    display: none;
+    margin-right: auto;
+    align-self: stretch;
+    width: 315px;
+    min-width: auto;
+    background-color: white;
+    @include scrollbar(vertical);
+    overflow: auto;
+}
+#aside-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 $firstListPadding;
+    background-color: $highlightColor;
+    color: white;
+    text-transform: uppercase;
+}
+#aside-menu-close {
+    padding: 20px 0;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+}
+.aside-link-title {
+    @include flexBetweenCenter(initial);
+    padding: 15px 15px 15px 0;
+    text-transform: capitalize;
+    color: inherit !important;
+    border-bottom: 1px solid $lightBorderLine;
+    cursor: pointer;
+}
+.aside-link-title-icon {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.aside-submenu {
+    display: none;
+}
+.level1 {
+    padding-left: $firstListPadding;
+    font-weight: 600;
+}
+.level2 {
+    padding-left: $firstListPadding + 7px;
+    color: $lighterText;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+.level3 {
+    padding-left: $firstListPadding + 12px;
+}
+.level2, .level3 {
+    background-color: #fafafb;
+}
+#aside-menu-avatar {
+    width: 40px;
+    height: auto;
+    border-radius: 50%;
+}
+/* Navigation - Responsive */
+@media only screen and (max-width: 1150px) {
+    #account-nav-info {
+        #page-links, #action-links {
+            display: none;
+        }
+    }
+    #nav-bar-account {
+        display: block;
+    }
+}
+@media only screen and (max-width: 1024px) {
+    #nav-bar-open {
+        display: block;
+    }
+    .logo {
+        justify-self: center;
+    }
+    #page-links {
+        display: none;
+    }
+}
+@media only screen and (max-width: 520px) {
+    #action-links {
+        display: none;
+    }
+    #nav-bar-account {
+        order: 2;
+        padding-right: 0;
+    }
+    /* Navigation - Aside */
+    .aside-action-link {
+        display: block;
+
+        img {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+@media only screen and (max-width: 400px) { 
+    #current-page {
+        display: none;
+    }
+}

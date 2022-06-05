@@ -1,0 +1,44 @@
+$highlightColor: #fa5d2a;
+$darkHighlightColor: #e64f1c;
+$lightHighlightColor: #f86d3f;
+$darkerBackground: #f3f5f6;
+$lightBorderLine: #d8d8d8;
+$darkBorderLine: #7e7e7e;
+/* Text */
+$lighterText: #6b6b6b;
+$lighterText2: #b4b4b4;
+$darkerText: #3c3c3c;
+$darkerText2: #292929;
+$lighterRepetitiveColor: #777777;
+$headerCarouselWidth: 72%;
+$headerCarouselHeight: 85%;
+$homeHeaderMoreItemsWidth: 50%;
+$arrowsDistanceFromGrid: 25px;
+/* Transition */
+$fastTransition: 0.2s;
+$mediumTransition: 0.5s;
+/* Navigation - Aside */
+$firstListPadding: 15px;
+/* Navigation User Dropdown Menu */
+$backgroundColorLoggedOff: rgb(250, 250, 250);
+/* Footer */
+$footerSidePadding: 10%;
+$footerPaddingBetweenParts: 20px;
+$footerSmallPaddingBetweenParts: 20px;
+/* Product Page */
+$productsShowcaseHeaderRowPadding: 18px;
+$productSearchOptionsPadding: 40px;
+$singleProductInfoPartPadding: 25px;
+/* Cart */
+$cartGridFields: 7fr 1fr 2fr 2fr;
+/* Profile */
+$accountAsideColumnLength: minmax(auto, 250px);
+$accountMainColumnLength: 7fr; 
+$accountAsideColumnRightBorder: 2px solid $lightBorderLine;
+$accountPadding: 35px;
+/* Profile - Activity Log */
+$iconLineWidth: 2px;
+/* Profile - Edit Order */
+$editOrderGridFields: 5fr 2fr 2fr 2fr;
+/* Profile - Admin Panel */
+$addImageThreadWidthHeight: 80px;

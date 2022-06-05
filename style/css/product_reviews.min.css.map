@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,gBAAgB,AAAC,CACb,WAAW,CAAE,YAAY,CAC5B",
+    "sources": [
+        "../sass/sections/product_reviews.scss"
+    ],
+    "names": [],
+    "file": "product_reviews.min.css"
+}

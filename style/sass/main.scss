@@ -1,0 +1,25 @@
+@import './core/mayerweb_reset';
+@import './core/fonts';
+@import './abstracts/mixins';
+@import './abstracts/variables';
+@import './core/basic';
+
+@import './layout/navigation';
+@import './layout/footer';
+
+@import './sections/home';
+@import './sections/home_hero';
+@import './sections/product_track';
+@import './sections/blog_cards';
+@import './sections/shop';
+@import './sections/parameter_card';
+@import './sections/product_specific';
+@import './sections/product_reviews';
+@import './sections/blog';
+@import './sections/cart';
+@import './sections/checkout';
+@import './sections/signing';
+@import './sections/account';
+@import './sections/contact';
+@import './sections/faq';
+@import './sections/about';

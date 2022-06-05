@@ -1,0 +1,107 @@
+/* Basic */
+.signing-button {
+    margin-top: 30px;
+    padding: 18px 0;
+    width: 100%;
+    color: white;
+    @include buttonReset1($highlightColor);
+}
+/* Sign In */
+#sign-in-types {
+    display: grid;
+    grid-template-columns: minmax(auto, 500px) minmax(auto, 500px);
+    justify-content: center;
+
+    > div {
+        padding: 0 50px;
+
+        &:first-child {
+            padding-left: 0;
+        }
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+}
+.sign-in-type-title {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    font-weight: 600;
+    color: $darkerText;
+}
+.sign-in-type-desc {
+    font-size: 0.9em;
+    color: $lighterText;
+    line-height: 20px;
+
+    a {
+        color: blue;
+        text-decoration: underline;
+    }
+}
+/* Sign In */
+#sign-in-wrapper {
+    border-right: 1px solid $lightBorderLine;
+}
+#sign-in-form {
+    margin: 30px 0;
+
+    label {
+        font-size: 0.9em;
+    }
+}
+#sign-in-fail {
+    display: flex !important;
+}
+#form-sign-info {
+    @include flexBetweenCenter(initial);
+}
+#show-password-label {
+    margin-left: 12px;
+    text-transform: capitalize;
+}
+#form-warning-info {
+    font-size: 0.7em;
+    color: red;
+}
+/* Register */
+#register-forms {
+    display: grid;
+    grid-template-columns: minmax(auto, 500px) minmax(auto, 500px);
+    justify-content: center;
+    gap: 30px;
+}
+#register-password-info {
+    width: 100%;
+    padding: 18px 10px;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    color: $lighterText;
+    background-color: #f4f4f4;
+}
+#finish-registration {
+    padding: 20px;
+    @include buttonReset1($highlightColor);
+    color: white;
+}
+/* Signing - Responsive */
+@media only screen and (max-width: 750px) {
+    #sign-in-types {
+        grid-template-columns: 1fr;
+        gap: 30px;
+
+        > div {
+            padding: 0;
+        }
+    }
+    #sign-in-wrapper {
+        border: none;
+    }
+    #go-to-sign-up {
+        padding: 18px;
+        width: auto;
+    }
+    #register-forms {
+        grid-template-columns: minmax(auto, 550px);
+    }
+}

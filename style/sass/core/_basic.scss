@@ -1,0 +1,340 @@
+body {
+    font-family: 'Roboto', sans-serif;    
+}
+main > * {
+    padding: 55px 3%;
+}
+input, select, textarea {
+    box-sizing: border-box;
+    outline: none;
+}
+textarea {
+    resize: none;
+}
+.above-main-content {
+    margin-bottom: 100px;
+}
+.track {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+.logo {
+    font-family: PoiretOne;
+    font-weight: 600;
+    font-size: 35px;
+    color: initial;
+
+    span {
+        color: $highlightColor;
+    }
+}
+.logo-small {
+    font-size: 25px;
+}
+.search-input {
+    display: flex;
+    align-items: stretch;
+
+    input {
+        padding: 8px;
+        width: 200px;
+        border: 1px solid $lightBorderLine;
+        border-right: none;
+        outline: none;
+    }
+    p {
+        @include flexHorVerCenter;
+        padding: 10px;
+        width: 10%;
+        font-size: 13px;
+        border: none;
+        background-color: $lightHighlightColor;
+        cursor: pointer;
+        
+        i {
+            color: white !important;
+        }
+    }
+}
+.select-page {
+    display: flex;
+    gap: 10px;
+
+    li {
+        cursor: pointer;
+        transition: $fastTransition;
+        border: 2px solid $lightBorderLine;
+    }
+}
+.full-page-cover {
+    position:fixed;
+    top: 0;
+    right: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    @include flexHorVerCenter;
+    color: $darkerText;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+}
+/* Titles */
+.section-title-wrapper {
+    height: fit-content;
+    border-bottom: 1px solid $lightBorderLine;
+}
+.section-center-title {
+    margin-bottom: 60px;
+    font-size: 2.6em;
+    text-align: center;
+    text-transform: capitalize;
+    color: $darkerText;
+}
+.section-small-title {
+    margin-bottom: 2.5vw;
+    font-size: 2em;
+    text-align: center;
+    text-transform: capitalize;
+
+    &-highlighted {
+        font-weight: 600;
+    }
+}
+.section-left-side-title {
+    display: inline-block;
+    padding-bottom: 15px;
+    font-size: 1.8em;
+    font-weight: 600;
+    border-bottom: 2px solid $highlightColor;
+}
+/* Form */
+.basic-input {
+    padding: 16px;
+    width: 100%;
+    border: 1px solid $lightBorderLine;
+    font-size: 1.1em;
+}
+.required-field {
+    margin-left: 5px;
+    font-size: 0.8em;
+    color: rgb(231, 68, 68);
+}
+.radio-wrapper {
+    display: flex;
+    align-items: center;
+}
+/* Single column for forms */
+.form-column {
+    @include flexColumn(25px);
+}
+/* Form box */
+.form-wrapper {
+    padding: 20px;
+    height: fit-content;
+    color: $darkerText;
+    font-size: 0.9em;
+    border: 1px solid #ebebeb;
+
+    & > * {
+        padding: 20px 0;
+
+        &:first-child {
+            padding-top: 0;
+        }
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
+}
+.form-wrapper-header {
+    text-transform: capitalize;
+    font-size: 1.3em;
+    font-weight: 600;
+    @include bottomLine(1px, #e6e6e6);
+}
+.form-field {
+    @include flexColumn(initial);
+    margin: 25px 0;
+
+    &:first-child {
+        margin-top: 0;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    select {
+        padding: 18px;
+        width: 100%;
+        color: $lighterText;
+        border: 1px solid $lightBorderLine;
+    }
+    textarea {
+        border: 1px solid $lightBorderLine;
+    }
+}
+.form-field-title {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+/* If input has a some info about it */
+.input-info-wrapper {
+    @include flexBetweenCenter(20px);
+
+    .checkout-input-info {
+        font-size: 1.4em;
+        color: $lighterText2;
+        cursor: pointer;
+
+        &:hover {
+            color: $lighterText;
+        }
+    }
+}
+/* Form error message */
+.form-error {
+    @include flexAlignCenter(10px);
+    display: none;
+    padding: 10px;
+    color: #cf454a;
+    background-color: #ffeeee;
+    line-height: 19px;
+
+    svg {
+        min-width: 22px;
+        max-height: 20px;
+    }
+}
+.form-error-margin {
+    margin-top: 15px;
+}
+/* Form general info */
+.form-alert {
+    margin-top: 20px;
+
+    p {
+        padding: 10px;
+    }
+}
+#success-form {
+    background-color: #e1efd6;
+    color: #658962;
+}
+#error-form {
+    background-color: #f3d7d4;
+    color: #a66057;
+}
+/* Panel form */
+#panel-form {
+    @include flexColumn(30px);
+}
+.panel-form-field {
+    @include flexColumn(18px);
+
+    input {
+        padding-bottom: 5px;
+        color: $darkerText2; 
+        @include bottomLine(3px, $lightBorderLine);
+    }
+}
+.panel-form-label {
+    font-size: 1.1em;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.panel-select {
+    padding: 10px;
+    width: 45%;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: 2px solid $highlightColor;
+    cursor: pointer;
+}
+#panel-form-submit {
+    margin-top: 10px;
+    padding: 10px 15px;
+    width: fit-content;
+    @include buttonReset1($highlightColor);
+    color: white;
+}
+/* Radio button group with extensions */
+.radio-title {
+    margin-bottom: 15px;
+    text-transform: capitalize;
+}
+.radio-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+.radio-extension {
+    margin-top: 20px;
+    padding-bottom: 15px;
+    @include bottomLine(2.5px, $lightBorderLine);
+}
+// #adress-delivery-extension {
+//     display: none;
+// }
+// #shop-delivery-extension {
+//     display: none;
+// }
+/* Radio buttons - vertical */
+.radio-group-vertical {
+    @include flexColumn(10px);
+}
+/* White box (used in profile pages) */
+.white-box {
+    background-color: white;
+    overflow: hidden;
+    border: 2px solid $lightBorderLine;
+    border-radius: 10px;
+}
+.white-box-header {
+    border-bottom: 1px solid $lightBorderLine;
+    text-transform: capitalize;
+
+    p {
+        padding: 10px 0;
+        width: fit-content;
+        margin: 0 auto;
+        border-bottom: 2px solid $highlightColor;
+    }
+}
+.white-box-content {
+    padding: 30px 20px;
+}
+.profile-items-not-found {
+    padding: 50px 0;
+    color: $lighterText;
+    text-align: center;
+
+    a {
+        margin-left: 10px;
+        text-decoration: underline;
+    }
+}
+/* Close Modal */
+.close-modal {
+    cursor: pointer;
+}
+/**/
+.items-not-found {
+    @include flexHorVerCenter;
+    gap: 10px;
+    padding: 50px 0;
+    color: #6b6b6b;
+    text-align: center;
+
+    a {
+        text-decoration: underline;
+    }
+}
+.not-found-img {
+    width: 23px;
+    height: auto;
+}

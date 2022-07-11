@@ -3,6 +3,7 @@
 ## Overview
 
 ClothesShop is a clothing e-commerce website. The goal of this project was to mimic real life e-commerce websites with as many features that characterize those websites as possible while improving my PHP and Javascript skills.
+Design has been inspired by many different designs around the web, but the code has been written by hand.
 
 ## Functionalities
 

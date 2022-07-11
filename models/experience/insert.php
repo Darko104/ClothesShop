@@ -21,7 +21,7 @@
 
         if (count($errors) > 0) {
             $_SESSION["errors"] = $errors;
-            header("Location: ../../index.php?page=account&view=user-rate-service");
+            header("Location: ../../account.php?view=user-rate-service");
         }
         else {
             try {
@@ -36,12 +36,12 @@
 
                 $conn->commit();
                 $_SESSION["review_info"] = ["success-form", "You have submited your experience!"];
-                header("Location: ../../index.php?page=account&view=user-rate-service");
+                header("Location: ../../account.php?view=user-rate-service");
             }
             catch(PDOException $exception) {
                 $conn->rollback();
                 $_SESSION["review_info"] = ["error-form", "Error adding your experience."];
-                header("Location: ../../index.php?page=account&view=user-rate-service");
+                header("Location: ../../account.php?account&view=user-rate-service");
             }
         }
     }

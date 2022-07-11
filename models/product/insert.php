@@ -82,7 +82,7 @@
         if (count($errors) > 0) {
             $_SESSION["errors"] = $errors;
 
-            header("Location: ../../index.php?page=account&view=panel-add");
+            header("Location: ../../account.php?view=panel-add");
         }
         // Insert product into database
         else {
@@ -177,14 +177,14 @@
 
                     $conn->commit();
                     $_SESSION["review_info"] = ["success-form", "You have submited new product!"];
-                    header("Location: ../../index.php?page=account&view=panel-add");
+                    header("Location: ../../account.php?view=panel-add");
                     exit();
                 }
                 catch(PDOException $exception) {
                     //echo $exception->getMessage();
                     $conn->rollback();
                     $_SESSION["review_info"] = ["error-form", "Error adding product."];
-                    header("Location: ../../index.php?page=account&view=panel-add");
+                    header("Location: ../../account.php?view=panel-add");
                 }
             }
         }

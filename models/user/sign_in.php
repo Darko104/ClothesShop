@@ -19,7 +19,7 @@
         if (count($errors) > 0) {
             var_dump($errors);
             $_SESSION["errors"] = $errors;
-            header("Location: ../../index.php?page=sign_in");
+            header("Location: ../../sign_in.php");
         }
         else {
             $password = md5($password);
@@ -34,12 +34,12 @@
 
             if ($userValidation) {
                 $_SESSION['logged_user'] = $userValidation;
-                header("Location: ../../index.php?page=account");
+                header("Location: ../../account.php");
             }
             else {
                 $errors[] = ["No user found with this username/email and matching passwords.", "sign-in-fail"];
                 $_SESSION["errors"] = $errors;
-                header("Location: ../../index.php?page=sign_in");
+                header("Location: ../../sign_in.php");
             }
         }
     }

@@ -43,23 +43,23 @@
                                 <?php 
                                     if ($user->privilege == 2):
                                 ?>
-                                <li><a href="index.php?page=account"><i class="fas fa-tasks"></i>&nbsp;settings/activity log</a></li>
-                                <li><a href="index.php?page=account&view=user-orders"><i class="fas fa-dollar-sign"></i>&nbsp;orders</a></li>
-                                <li><a href="index.php?page=account&view=user-wishlist"><i class="fas fa-heart"></i>&nbsp;wishlist</a></li>
+                                <li><a href="account.php"><i class="fas fa-tasks"></i>&nbsp;settings/activity log</a></li>
+                                <li><a href="account.php?view=user-orders"><i class="fas fa-dollar-sign"></i>&nbsp;orders</a></li>
+                                <li><a href="account.php?view=user-wishlist"><i class="fas fa-heart"></i>&nbsp;wishlist</a></li>
                                 <?php elseif($user->privilege == 1): ?>
-                                <li><a href="index.php?page=account&view=panel-main"><i class="fa-solid fa-terminal"></i>&nbsp;main</a></li>
-                                <li><a href="index.php?page=account&view=panel-stats"><i class="fa-solid fa-ranking-star"></i>&nbsp;page stats</a></li>
-                                <li><a href="index.php?page=account&view=panel-products"><i class="fa-solid fa-box"></i>&nbsp;products</a></li>
+                                <li><a href="account.php?view=panel-main"><i class="fa-solid fa-terminal"></i>&nbsp;main</a></li>
+                                <li><a href="account.php?view=panel-stats"><i class="fa-solid fa-ranking-star"></i>&nbsp;page stats</a></li>
+                                <li><a href="account.php?view=panel-products"><i class="fa-solid fa-box"></i>&nbsp;products</a></li>
                                 <?php endif; ?>
-                                <li id="user-box-log-off"><a href="index.php?page=log_off"><i class="fas fa-sign-out-alt"></i>&nbsp;log off</a></li>
+                                <li id="user-box-log-off"><a href="models/user/log_off.php"><i class="fas fa-sign-out-alt"></i>&nbsp;log off</a></li>
                             </ul>
                         </div>
                         <?php endif; ?>
                     </div>
                     </div>
                 </li>
-                <li><a href="index.php?page=account&view=user-wishlist"><img src="assets/images/love.svg" class="nav-icon"></a></li>
-                <li><a href="index.php?page=cart">
+                <li><a href="account.php?view=user-wishlist"><img src="assets/images/love.svg" class="nav-icon"></a></li>
+                <li><a href="cart.php">
                     <img src="assets/images/shopping-bag.svg" class="nav-icon">
                     <p id="products-in-cart"><span><?=$numberOfProductsInCart?></span></p>
                 </a></li>
@@ -101,7 +101,7 @@
                 </ul>
             </div>
             <div class="promo-card" id="extended-nav-image">
-                <a href="index.php?page=shop&category%5B%5D=3">
+                <a href="shop.php?category%5B%5D=3">
                     <div class="promo-card-text">
                         <p class="promo-card-desc">Check out our new</br><span id="mid-row"><span>sweatshirt</span> collection</span></p>
                     </div>

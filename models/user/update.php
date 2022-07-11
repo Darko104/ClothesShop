@@ -34,7 +34,7 @@
             $_SESSION["errors"] = $errors;
             $_SESSION["open_more_options"] = "style='display: block;'";
             $_SESSION["inverted_arrow"] = "style='transform: matrix(1, 0, 0, -1, 0, 0);'";
-            header("Location: ../../index.php?page=account");
+            header("Location: ../../account.php");
         }
         else {
             $formId = $_POST["id"];
@@ -79,7 +79,7 @@
                     $errors[] = ["Error entering values in database", "update-user-fail"];
                     $_SESSION["errors"] = $errors;
                 }
-                header("Location: ../../index.php?page=account");
+                header("Location: ../../account.php");
             }
         }
     }

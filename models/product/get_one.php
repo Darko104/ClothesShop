@@ -17,7 +17,7 @@
             $isProductInWishlist = isProductInWishlist($userId, $id);
         }
 
-        $stsmProduct = $conn->prepare("SELECT *, p.id AS productId, p.name AS productName, b.id AS brandId, b.name AS brandName FROM product p INNER JOIN brand b ON p.brand_id = b.id INNER JOIN product_price pp ON p.id = pp.product_id WHERE p.id = :id");
+        $stsmProduct = $conn->prepare("SELECT *, p.id AS productId, p.name AS productName, b.id AS brandId, b.name AS brandName, c.name AS categoryName FROM product p INNER JOIN brand b ON p.brand_id = b.id INNER JOIN product_price pp ON p.id = pp.product_id INNER JOIN category c ON p.category_id = c.id WHERE p.id = :id");
         $stsmProduct->bindParam(":id", $id);
 
         $images = getProductImages($id);

@@ -1,0 +1,531 @@
+/* Home - News cards */
+#news-cards {
+    @include flexBetweenCenter(initial);
+
+    .promo-card {
+        width: 32%;
+        height: 17.5vw;
+    }
+}
+.promo-card {
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: white;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: $fastTransition;
+    cursor: pointer;
+
+    a {
+        color: inherit;
+    }
+    .promo-card-text {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        z-index: 1;
+    }
+    .promo-card-title {
+        position: absolute;
+        width: 100%;
+        top: 4vw;
+    }
+    .promo-card-desc {
+        position: absolute;
+        bottom: 3vw;
+        width: 100%;
+        font-size: 1.2vw;
+        user-select: none;
+    }
+
+    &:hover {
+        transform: scale(1.01) translate(0, -20px);
+    }
+}
+#news-card-1 {
+    background-image: url('../../images/news-card-1.jpg');
+
+    .promo-card-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5em;
+        font-family: "Roboto";
+        font-size: 3.3vw;
+    }
+    #nike-logo-small {
+        width: 7vw;
+        height: auto;
+        color: white;
+    }
+    .promo-card-desc {
+        span {
+            color: yellow;
+        }
+    }
+}
+#news-card-2 {
+    background-image: url('../../images/news-card-2.jpg');
+
+    .promo-card-title {
+        font-family: "Dancing";
+        font-size: 4vw;
+    }
+    .promo-card-desc {
+        span {
+            color: $highlightColor;
+        }
+    }
+}
+#news-card-3 {
+    background-image: url('../../images/news-card-3.jpg');
+
+    .promo-card-title {
+        margin-top: -10px;
+        font-family: "RoadRage";
+        font-size: 6vw;
+    }
+    .promo-card-desc {
+        span {
+            color: #b2e444;
+        }
+    }
+}
+.promo-card-overlay {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+    linear-gradient(to bottom, rgba(26, 26, 26, 0.3), rgba(0, 0, 0, 0.4));
+    background-size: cover;
+}
+/* Home - Featured products track */
+.home-products-track {
+    padding: 20px 0;
+    display: flex;
+    align-items: stretch;
+
+    .product-card {
+        width: 20%;
+    }
+    .product-card-name {
+        font-size: 1em;
+        line-height: 17px;
+    }
+}
+/* Home - Categories grid */
+.grid-section-button {
+    transition: $fastTransition;
+
+    &:hover {
+        background-color: $highlightColor !important;
+        color: white;
+    }
+}
+#categories-grid-wrapper {
+    background-color: $darkerBackground;
+}
+#categories-grids {
+    display: grid;
+    justify-content: center;
+    justify-items: stretch;
+    align-items: stretch;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 12vw);
+    grid-template-areas: 
+      "small-1 big big small-3"
+      "small-1 big big small-4"
+      "small-2 big big small-4";
+    gap: 1.2em;
+    
+    article {
+        @include flexHorVerCenter;
+        background-position: center;
+        background-size: cover;
+        border-radius: 10px;
+
+        button {
+            @include buttonReset1(white);
+            padding: 20px 10px;
+            width: 13vw;
+            font-size: 0.9em;
+            border: none;
+            border-radius: 4px;
+        }
+    }
+}
+#grid-small-1 {
+    grid-area: small-1;
+    background-image: url('../../images/grid-1.jpg');
+}
+#grid-small-2 {
+    grid-area: small-2;
+    background-image: url("../../images/grid-2.jpg");
+}
+#grid-big {
+    grid-area: big;
+    background-image: url("../../images/grid-3.jpg");
+}
+#grid-small-3 {
+    grid-area: small-3;
+    background-image: url("../../images/grid-4.jpg");
+}
+#grid-small-4 {
+    grid-area: small-4;
+    background-image: url("../../images/grid-5.jpg");
+}
+#categories-grid-main-button {
+    @include buttonReset1(white);
+    display: block;
+    margin: 60px auto 0 auto;
+    padding: 18px 25px;
+    border: 2px solid $highlightColor;
+    transition: $fastTransition;
+}
+/* Home - Moving letters */
+#moving-letters {
+    padding: 15px 0 !important;
+    overflow: hidden;
+    color: white;
+    background-color: $highlightColor;
+}
+#scrolling-text {
+    display: flex;
+    gap: 125px;
+
+    /* animation properties */
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    
+    -moz-animation: my-animation 15s linear infinite;
+    -webkit-animation: my-animation 15s linear infinite;
+    animation: my-animation 15s linear infinite;
+
+    p {
+        min-width: fit-content;
+        font-weight: 600;
+    }
+}
+@-moz-keyframes my-animation {
+    from { -moz-transform: translateX(100%); }
+    to { -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes my-animation {
+    from { -webkit-transform: translateX(100%); }
+    to { -webkit-transform: translateX(-100%); }
+}
+@keyframes my-animation {
+    from {
+        -moz-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+    }
+    to {
+        -moz-transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
+/* Home - Customer Feedback */
+#customer-opinions-wrapper {
+    background-color: #f3f5f6;
+}
+#customer-opinions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px;
+    font-family: Roboto;
+}
+/* Home - Customer Feedback - Comments */
+#customer-feedbacks {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+// .customer-feedback-card {
+//     display: inline-flex;
+//     gap: 3em;
+//     padding: 1.5em 2em;
+//     width: 85%;
+//     background-color: white;
+//     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+//     &:nth-of-type(even) {
+//         align-self: flex-end;
+//     }
+// }
+.customer-feedback-card {
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "description";
+    column-gap: 20px;
+    padding: 1.5em 2em;
+    width: 85%;
+    background-color: white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    &:nth-of-type(even) {
+        align-self: flex-end;
+    }
+}
+// .customer-image {
+//     grid-area: avatar;
+//     width: 100%;
+//     height: auto;
+//     align-self: center;
+// }
+.customer-feedback-header {
+    display: flex;
+    gap: 0.5em;
+    grid-area: header;
+
+    .customer-name {
+        text-transform: capitalize;
+        font-weight: 600;
+    }
+    .customer-occupation {
+        color: #afafaf;
+    }
+}
+.customer-comment {
+    margin-top: 15px;
+    font-size: 0.9em;
+    line-height: 16px;
+    color: #666;
+    grid-area: description;
+}
+/* Home - Customer Feedback - Message */
+#message-on-customers {
+    i {
+        font-size: 6vw;
+        color: $highlightColor;
+    }
+    #message-about-customers {
+        margin-top: 40px;
+        font-size: 1.8em;
+        font-weight: 600;
+        line-height: 40px;
+
+        span {
+            color: $highlightColor;
+        }
+    }
+
+    button {
+        @include buttonReset1($highlightColor);
+        margin-top: 40px;
+        font-size: 0.9em;
+        color: white;
+        transition: $fastTransition;
+
+        a {
+            display: block;
+            padding: 1em 2.2em;
+            color: white;
+        }
+
+        &:hover {
+            background-color: $darkHighlightColor;
+        }
+    }
+}
+/* Home (with exception of hero) - Responsive */
+@media only screen and (max-width: 1000px) {
+    .home-products-track {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        flex-wrap: nowrap;
+
+        &::-webkit-scrollbar {
+            height: 12px;
+        }
+        /* Track */
+        &::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: rgb(155, 155, 155);
+            border-radius: 10px;
+        }
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        .product-card {
+            min-width: 200px;
+        }
+    }
+    #categories-grids {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 220px);
+        grid-template-areas: 
+        "small-1 small-3"
+        "small-1 small-4"
+        "small-2 small-4"
+        "big big"
+        "big big"
+        "big big";
+    }
+    #categories-grids article button {
+        width: 175px;
+    }
+    #customer-opinions-wrapper {
+        .section-title-wrapper {
+            margin-bottom: 50px;
+        }
+    }
+    #customer-opinions {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+    #message-on-customers {
+        grid-row-start: 1;
+        text-align: center;
+    }
+}
+@media only screen and (max-width: 890px) {
+    #news-cards {
+        .promo-card {
+            width: 48%;
+            height: 22vw;
+        }
+        .promo-card-title {
+            font-size: 5vw;
+        }
+        .promo-card-desc {
+            font-size: 1.8vw;
+        }
+    }
+    #news-card-3 {
+        display: none;
+    }
+}
+@media only screen and (max-width: 650px) {
+    #news-cards {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+
+        .promo-card {
+            width: 80%;
+            height: 30vw;
+        }
+        .promo-card-title {
+            font-size: 8vw;
+        }
+        .promo-card-desc {
+            font-size: 2.3vw;
+        }
+    }
+    #news-card-1 #nike-logo-small {
+        width: 11vw;
+    }
+    #message-on-customers {
+        i {
+            font-size: 5em;
+        }
+    }
+    #customer-feedbacks {
+        gap: 20px;
+
+        .customer-feedback-card {
+            width: unset;
+            align-self: unset;
+        }
+    }
+}
+@media only screen and (max-width: 600px) {
+    #categories-grids {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 340px;
+        grid-template-rows: unset;
+        gap: 20px;
+        grid-template-areas: unset;
+
+        > * {
+            grid-area: unset;
+        }
+    }
+}
+@media only screen and (max-width: 520px) {
+    #news-cards {
+        .promo-card {
+            width: 95%;
+            height: 175px;
+        }
+        .promo-card-title {
+            font-size: 9vw;
+        }
+        .promo-card-desc {
+            font-size: 15px;
+        }
+    }
+    #news-card-1 #nike-logo-small {
+        width: 16vw;
+    }
+    .section-small-title {
+        font-size: 1.8em;
+    }
+    .product-track-categories ul li {
+        font-size: 0.9em;
+    }
+    .customer-feedback-header {
+        flex-direction: column;
+        gap: 3px;
+    }
+}
+@media only screen and (max-width: 450px) {
+    .customer-feedback-card {
+        grid-template-areas: 
+        "avatar header"
+        "description description";
+    }
+    .customer-feedback-header {
+        align-self: center;
+    }
+}
+@media only screen and (max-width: 300px) {
+    .product-track-categories {
+        ul {
+            li {
+                font-size: 0.8em;
+                text-align: center;
+            }
+        }
+    }
+    #message-on-customers {
+        #message-about-customers {
+            font-size: 1.4em;
+            line-height: 26px;
+        }
+        button {
+            margin-top: 30px;
+        }
+    }
+    .customer-feedback-card {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+        ". avatar ."
+        "header header header"
+        "description description description";
+        row-gap: 15px;
+    }
+    .customer-feedback-header {
+        text-align: center;
+    }
+    .customer-occupation {
+        font-size: 0.9em;
+    }
+    .customer-comment {
+        margin-top: 0;
+    }
+}

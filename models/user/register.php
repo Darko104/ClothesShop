@@ -39,7 +39,7 @@
         if (count($errors) > 0) {
             var_dump($errors);
             $_SESSION["errors"] = $errors;
-            header("Location: ../../index.php?page=sign_up");
+            header("Location: ../../sign_up.php");
         }
         else {
             $password = md5($password);
@@ -60,7 +60,7 @@
 
             if($execute) {
                 $_SESSION["review_info"] = ["success-form", "You have registered, please log in!"];
-                header("Location: ../../index.php?page=sign_in");
+                header("Location: ../../sign_in.php");
             }
             else {
                 echo "Error entering values in database";

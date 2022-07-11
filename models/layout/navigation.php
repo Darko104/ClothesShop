@@ -16,9 +16,9 @@ class navigationLink {
 function writeNavPageLinks($currentPage = "") {
     $links = [];
     $links[] = new navigationLink('Home', 'index.php', false, false);
-    $links[] = new navigationLink('Shop', 'index.php?page=shop', false, false);
+    $links[] = new navigationLink('Shop', 'shop.php', false, false);
     $links[] = new navigationLink('Explore', '#', "link-shop", true);
-    $links[] = new navigationLink('About Me', 'index.php?page=about', false, false);
+    $links[] = new navigationLink('About Me', 'about.php', false, false);
 
     $output = "";
 

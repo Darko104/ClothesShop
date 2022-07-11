@@ -159,7 +159,7 @@
                 }
 
                 // Redirektovanje
-                header("Location: ../../index.php?page=account&view=user-orders");
+                header("Location: ../../account.php?view=user-orders");
             }
         }
     }

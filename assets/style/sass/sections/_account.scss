@@ -1,0 +1,907 @@
+/* Account */
+#user-panel {
+    display: grid;
+    grid-template-columns: $accountAsideColumnLength $accountMainColumnLength;
+    grid-template-rows: minmax(650px, 100%);
+    padding: 0;
+}
+/* Account - Aside */
+#user-info-menu {
+    border-right: $accountAsideColumnRightBorder;
+}
+#user-info-categories {
+    margin-top: $accountPadding;
+    @include flexColumn(initial);
+    font-family: Rubik;
+
+    // li {
+    //     position: relative;
+    //     display: flex;
+    //     align-items: center;
+    //     gap: 15px;
+    //     //padding: 15px $accountPadding;
+    //     text-transform: capitalize;
+    //     color: $lighterText;
+    //     cursor: pointer;
+    //     transition: $fastTransition;
+
+    //     i {
+    //         width: 30px;
+    //         font-size: 1.3em;
+    //     }
+
+    //     &:hover {
+    //         background-color: #e8b05d61;
+    //     }
+    // }
+    a {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 15px $accountPadding;
+        text-transform: capitalize;
+        color: $lighterText;
+        cursor: pointer;
+        transition: $fastTransition;
+
+        i {
+            width: 30px;
+            font-size: 1.3em;
+        }
+
+        &:hover {
+            background-color: #e8b05d61;
+        }
+    }
+}
+.selected-user-info-category a {
+    font-weight: 600;
+    color: $highlightColor !important;
+    background-color:  #e8b05d61;
+}
+.selected-mark {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 3px;
+    background-color: $darkHighlightColor;
+}
+/* Account - User Info Showcase */
+#user-info-showcase {
+    padding: $accountPadding;
+    background-color: #f3f7fa;
+}
+/* Account - User Account Info */
+#user-profile {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: 3fr 5fr;
+}
+/* Account -  User Account Info - Profile Card */
+#user-profile-card {
+    overflow: hidden;
+    font-family: Rubik;
+    border: 2px solid $lightBorderLine;
+    border-radius: 10px;
+    background-color: white;
+}
+/* Account - User Account Info - User Profile Card - Summary */
+#user-summary {
+    @include flexHorVerCenter;
+    padding: 50px 0;
+    flex-direction: column;
+    background-image:
+    linear-gradient(to bottom, rgba(156, 156, 156, 0.432), rgba(43, 43, 43, 0.904)),
+    url('../../images/user-background.jpg');
+    background-position: center;
+    background-size: cover;
+}
+#user-avatar {
+    margin-bottom: 25px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+#user-summary-info {
+    @include flexColumn(10px);
+    align-items: center;
+    color: white;
+}
+#summary-name-surname {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+#user-registration-date {
+    color: $lighterText2;
+}
+/* Account -  User Account Info - User Profile Card - All Info */
+#user-info {
+    padding: 15px 10px;
+}
+.user-info-header {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+#update-general-info-box {
+    @include flexColumn(7px);
+}
+.account-form-error {
+    padding: 12px;
+    font-size: 0.9em;
+    line-height: 16px;
+
+    svg {
+        min-width: 20px;
+        max-height: 18px;
+    }
+}
+#update-warning {
+    display: flex;
+    color: rgb(64, 62, 1);
+    background-color: rgb(255, 255, 102);
+}
+#update-success {
+    display: flex;
+    background-color: rgb(132, 242, 126);
+    color: rgb(0, 88, 0);
+}
+#user-info form {
+    margin-top: 15px;
+}
+.mini-form-field {
+    position: relative;
+    @include flexColumn(5px);
+    margin-bottom: 20px;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+
+    label {
+        font-size: 15px;
+        color: #b7b8ba;
+        font-family: Roboto;
+        text-transform: capitalize;
+    }
+    input {
+        padding: 5px 0;
+        font-size: 1em;
+        @include bottomLine(1px, $lightBorderLine);
+    }
+    select {
+        padding: 10px 0;
+        color: $darkerText;
+        border: 1px solid $lightBorderLine;
+    }
+}
+.mini-form-input-icon {
+    position: absolute;
+    right: 10px;
+    top: 26px;
+    color: $darkerText;
+}
+#account-card-more-fields {
+    margin-top: 25px;
+}
+#message-hidden-fields {
+    @include flexBetweenCenter(initial);
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-transform: capitalize;
+    cursor: pointer;
+
+    i {
+        color: $lighterText;
+        transition: $fastTransition;
+    }
+}
+#hidden-form-fields {
+    display: none;
+}
+#finish-user-update {
+    margin-top: 18px;
+    padding: 10px 15px;
+    @include buttonReset1($highlightColor);
+    color: white;
+}
+/* Account - User Account Info - Activity Log */
+.recorded-activity {
+    display: grid;
+    grid-template-columns: 2fr 1fr 8fr;
+    gap: 10px;
+}
+.activity-date {
+    color: $lighterText;
+}
+.activity-time {
+    margin-bottom: 5px;
+}
+.activity-icon {
+    position: relative;
+    i {
+        display: block;
+        margin: 0 auto;
+        padding: 10px;
+        width: fit-content;
+        background-color: white;
+        border: 1px solid $lightBorderLine;
+        border-radius: 50%;
+        color: $highlightColor;
+    }
+}
+.activity-icon-line {
+    position: absolute;
+    right: calc(50% - (#{$iconLineWidth} / 2));
+    width: $iconLineWidth;
+    height: 100%;
+    background-color: $lightBorderLine;
+}
+.activity-info {
+    padding-bottom: 25px;
+}
+.activity-info-title {
+    margin-bottom: 10px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.activity-specific-info {
+    color: $lighterText;
+    font-size: 0.9em;
+    line-height: 20px;
+}
+/* Account - User account info - Orders */
+#all-orders {
+    @include gridTrack(3, 20px);
+    row-gap: 30px;
+}
+.single-order {
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid $lightBorderLine;
+}
+.single-order-header {
+    @include flexBetweenCenter(initial);
+}
+.order-number {
+    font-weight: 600;
+}
+.date-ordered {
+    color: $lighterText;
+    font-size: 0.9em;
+}
+.single-order-basic-info p:first-child, .single-order-status-wrapper p:first-child {
+    margin-bottom: 7px;
+}
+.single-order-status-wrapper {
+    text-align: center;
+
+    .single-order-status-title {
+        font-weight: 600;
+    }
+}
+.single-order-status {
+    text-transform: capitalize;
+}
+.status-delivered {
+    color: rgb(0, 190, 0);
+}
+.single-order-products {
+    @include flexColumn(17px);
+    padding: 30px 0 10px 0;
+    border-bottom: 1px solid $lightBorderLine;
+    cursor: pointer;
+}
+.ordered-product {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.ordered-product-image {
+    width: 90px;
+    height: auto;
+    border-radius: 50%;
+    border: 1px solid $lightBorderLine;
+}
+.ordered-product-info {
+    @include flexColumn(12px);
+}
+.ordered-product-name {
+    font-weight: 600;
+    word-break: break-all;
+    color: $darkerText;
+}
+.ordered-product-purchase-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    //@include flexBetweenCenter(initial);
+}
+.single-order-footer {
+    @include flexBetweenCenter(initial);
+    padding-top: 15px;
+}
+.single-order-total-products {
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    color: $lighterText;
+}
+.single-order-total-price {
+    font-weight: 600;
+}
+.single-order-action button {
+    @include buttonReset1($highlightColor);
+    padding: 10px 15px;
+    color: white;
+}
+/* Account - Full Page Cover - Edit Order */
+#view-order {
+    display: grid;
+    grid-template-columns: 8fr 4fr;
+    width: 75%;
+    height: auto;
+    background-color: white;
+    display: none;
+}
+#order-info, #order-credientals {
+    display: grid;
+    grid-template-rows: 80px 370px;
+}
+.view-order-section-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-transform: capitalize;
+    border-bottom: 2px solid $lightBorderLine;
+}
+/* Account - Full Page Cover - Edit Order - Products */
+#order-info {
+    padding: 50px;
+}
+#order-products-table {
+    overflow-y: auto;
+}
+#opt-header {
+    display: grid;
+    grid-template-columns: $editOrderGridFields;
+    margin-bottom: 15px;
+    text-align: center;
+    color: $lighterText;
+}
+#view-order-status {
+    margin-left: 10px;
+    font-size: 0.9em;
+    text-transform: capitalize;
+    color: $lighterText2;
+}
+.opt-row {
+    display: grid;
+    grid-template-columns: $editOrderGridFields;
+}
+.opt-row-product {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+    .opt-name {
+        margin-bottom: 8px;
+        word-break: break-all;
+    }
+    .opt-brand {
+        font-size: 0.9em;
+        text-transform: uppercase;
+        color: $highlightColor;
+    }
+}
+.opt-row-price, .opt-row-quantity, .opt-row-total {
+    @include flexHorVerCenter;
+}
+.opt-image {
+    width: 90px;
+    height: auto;
+}
+.view-only-quantity input {
+    border-right: 1px solid $lightBorderLine;
+}
+/* Account - Full Page Cover - Edit Order - Credientals */
+#order-credientals {
+    padding: 50px 30px;
+    background-color: #f5f5f5;
+}
+#order-credientals-view {
+    @include flexColumn(15px);
+    padding: 0 10px 5px 0;
+    overflow-y: auto;
+    border-bottom: 1px solid $lightBorderLine;
+}
+.view-crediental-field {
+    @include flexColumn(8px);
+
+    label {
+        font-size: 0.9em;
+        text-transform: capitalize;
+        color: $lighterText;
+    }
+    input {
+        padding: 10px;
+        border: none;
+    }
+    textarea {
+        padding: 5px 8px;
+        border: none;
+    }
+}
+.order-edit-radio-buttons-field {
+    margin: 15px 0;
+
+    .radio-title {
+        font-size: 0.9em;
+        color: $lighterText;
+    }
+
+    label {
+        font-size: 0.9em;
+    }
+}
+// #view-order-adress-extension {
+//     @include flexColumn(15px);
+//     display: none;
+// }
+// #view-order-store-extension {
+
+//     #select-shop {
+//         margin-top: 20px;
+//         padding: 10px;
+//         width: 100%;
+//         border: none;
+//     }
+// }
+#order-credientals-action {
+    margin-top: 25px;
+}
+#cancel-order {
+    @include buttonReset1($highlightColor);
+    padding: 10px 14px;
+    color: white;
+}
+/* Account - User Account Info - Wishlist */
+#wishlist-items {
+    @include gridTrack(4, 10px);
+}
+/* Account - User account Info - Past Reviews */
+.past-review-header {
+    font-weight: initial;
+    
+    span {
+        font-weight: 600;
+    }
+}
+/* Account - User Account Info - Leave Service Review */
+#rate-service-wrapper {
+    display: inline-block;
+    width: 410px;
+}
+#rate-service-stars {
+    display: flex;
+    gap: 5px;
+
+    i {
+        font-size: 1.1em;
+        color: $highlightColor;
+    }
+}
+/* Account - Admin Panel */
+.white-box-table {
+    padding: 30px 0;
+}
+/* Account - Admin Panel - Main */
+#panel-main {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: 3fr 5fr;
+}
+#panel-stats {
+    @include flexColumn(15px);
+}
+.stat-box {
+    padding: 15px 20px;
+    border: 2px solid $lightBorderLine;
+    border-radius: 12px;
+}
+.stat-box-header {
+    @include flexBetweenCenter(initial);
+
+    p {
+        color: $lighterText;
+        text-transform: capitalize;
+    }
+}
+.stat-box-icon {
+    padding: 10px;
+    color: $highlightColor;
+    background-color: #ff977491;
+    border-radius: 50%;
+}
+.stat-box-value {
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 15px;
+}
+.panel-table {
+    width: 100%;
+    text-align: center;
+
+    th, td {
+        padding: 10px 0;
+    }
+    th {
+        font-weight: 600;
+    }
+    tr:first-of-type {
+        border-bottom: 2px solid $darkBorderLine;
+    }
+    tr:not(:first-of-type) {
+        border-bottom: 1px solid $lightBorderLine;
+    }
+}
+.page-name {
+    text-transform: capitalize;
+}
+/* Account - Admin Panel - Pages */
+#panel-pages-box {
+    width: 60%;
+}
+/* Account - Admin Panel - Products */
+#panel-products-options {
+    padding: 0 10px;
+    @include flexColumn(25px);
+    margin-bottom: 30px;
+    color: $lighterText;
+}
+.ppo-dropdown {
+    width: 160px;
+}
+#ppo-row-1 {
+    display: flex;
+    align-items: flex-end;
+    gap: 30px;
+}
+#ppo-prices {
+    @include flexAlignCenter(15px);
+
+    input {
+        @include bottomLine(2px, $lightHighlightColor);
+        padding-bottom: 5px;
+        width: 110px;
+        font-size: 15px;
+    }
+}
+#ppo-row-2 {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+}
+#ppo-search {
+    @include bottomLine(2px, $lightHighlightColor);
+    padding-bottom: 6px;
+    font-size: 15px;
+}
+#ppo-sort-wrapper {
+    justify-content: flex-start;
+}
+#panel-product-search {
+    padding: 10px 32px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: white;
+    background-color: #fa5d2a;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.panel-btn {
+    border: none;
+
+    a {
+        display: block;
+        padding: 6px 19px;
+        text-transform: uppercase;
+        color: white;
+        cursor: pointer;
+    }
+}
+.panel-view-btn {
+    background-color: #294af7;
+}
+.panel-delete-btn {
+    background-color: #f34642;
+}
+/* Account - Admin Panel - Add product */
+#add-product-box {
+    width: 33%;
+}
+#product-images-preview-add {
+    display: flex;
+    gap: 8px;
+}
+#image-previews {
+    @include flexAlignCenter(5px);
+}
+.cancel-image {
+    @include flexHorVerCenter;
+    height: 20px;
+    color: #fffdfd;
+    background-color: $lightHighlightColor;
+    overflow: hidden;
+    cursor: pointer;
+}
+.image-preview {
+    width: $addImageThreadWidthHeight;
+    height: $addImageThreadWidthHeight;
+    background-size: cover;
+    background-position: center;
+}
+#add-new-image {
+    @include flexHorVerCenter;
+    width: $addImageThreadWidthHeight;
+    height: $addImageThreadWidthHeight;
+    font-size: 29px;
+    color: $darkerText;
+    border: 2px solid #afa6a6;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: $fastTransition;
+
+    &:hover {
+        background-color: #e6e6e6;
+    }
+}
+.product-add-image {
+    display: none;
+}
+/* Account - Responsive */
+@media only screen and (max-width: 1200px) {
+    /* Account - Orders */
+    .single-order-header {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        gap: 15px;
+
+        & > * {
+            text-align: left;
+        }
+    }
+    .single-order-status-wrapper {
+        display: flex;
+        gap: 10px;
+    }
+    .ordered-product-image {
+        width: 70px;
+    }
+    .single-order-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+@media only screen and (max-width: 1150px) {
+    /* Account - Orders */
+    #all-orders {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media only screen and (max-width: 1050px) {
+    /* Account - User Account Info */
+    #user-info-showcase {
+        padding: 35px 15px;
+    }
+    #user-profile {
+        gap: 20px;
+        grid-template-columns: 4fr 5fr;
+    }
+    /* Account - Wish List */
+    #wishlist-items {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media only screen and (max-width: 950px) {
+    /* Account - User Account Info */
+    #user-profile {
+        grid-template-columns: 85%;
+        justify-content: center;
+    }
+    /* Account - Wish List */
+    #wishlist-items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media only screen and (max-width: 870px) {
+    /* Account - Orders */
+    #all-orders {
+        grid-template-columns: 1fr;
+    }
+}
+@media only screen and (max-width: 800px) {
+    /* Account - User Account Info */
+    #user-profile {
+        grid-template-columns: 100%;
+    }
+}
+@media only screen and (max-width: 700px) {
+    /* Account - Rate Service */
+    #rate-service-wrapper {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 650px) {
+    /* Account - Aside */
+    #user-info-menu {
+        display: none;
+    }
+    /* Account - User Account Info */
+    #account-nav-info, #account-nav-logo {
+        padding: 0 15px;
+    }
+    #account-nav-logo {
+        justify-content: center;
+
+        img {
+            width: 160px;
+        }
+    }
+    #user-panel {
+        grid-template-columns: 1fr;
+    }
+    #user-profile {
+        grid-template-columns: 95%;
+    }
+    /* Account - Orders */
+    .single-order-products {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .ordered-product-info {
+        flex-direction: column;
+    }
+    /* Account - Wish List */
+    #wishlist-items {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    /* Account - Rate Service */
+    #rate-service-wrapper {
+        display: inherit;
+        margin: 0 auto;
+        width: 85%;
+    }
+}
+@media only screen and (max-width: 600px) {
+    /* Account - Wish List */
+    #wishlist-items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media only screen and (max-width: 540px) {
+    /* Account - User Account Info */
+    #account-nav-logo {
+        justify-content: flex-start;
+    }
+    #account-usertype-name {
+        display: none;
+    }
+    #account-nav-info {
+        justify-content: flex-end;
+    }
+    #account-nav-logo {
+        border: none;
+    }
+    /* Account - Orders */
+    .ordered-product {
+        flex-direction: column;
+    }
+}
+@media only screen and (max-width: 420px) {
+    #wishlist-items {
+        grid-template-columns: 1fr;
+
+        .product-card img {
+            height: auto !important;
+        }
+        .product-card-name {
+            font-size: 0.9em;
+        }
+        .product-card-price {
+            font-size: unset;
+        }
+    }
+    /* Account - Past Reviews */
+    .product-review-rating {
+        flex-direction: column;
+        gap: 15px;
+    }
+    /* Account - Rate Service */
+    #rate-service-wrapper {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 400px) {
+    /* Account - User Account Info */
+    #all-activity {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+    }
+    .recorded-activity {
+        grid-template-columns: auto 1fr;
+        grid-template-areas:
+        "icon date ."
+        "info info info";
+        gap: 0;
+        column-gap: 10px;
+        row-gap: 20px;
+    }
+    .activity-date {
+        grid-area: date;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    .activity-time {
+        margin: 0;
+    }
+    .activity-icon {
+        grid-area: icon;
+
+        i {
+            margin: 0;
+        }
+    }
+    .activity-info {
+        grid-area: info;
+        padding: 0;
+    }
+    .activity-icon-line {
+        display: none;
+    }
+    /* Account - Orders */
+    .single-order-products {
+        grid-template-columns: 1fr;
+    }
+    .ordered-product {
+        flex-direction: row;
+    }
+}
+@media only screen and (max-width: 310px) {
+    /* Account - User Account Info */
+    .recorded-activity {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "icon"
+        "date"
+        "info";
+        row-gap: 14px;
+    }
+    .activity-icon {
+        justify-self: center;
+    }
+}
+/* Temporary */
+#user-profile {
+    display: grid; // grid
+}
+#user-orders {
+    display: block; // block
+}
+#user-wishlist {
+    display: block; // block
+}
+#user-reviews {
+    display: block; // block
+}
+#user-rate-service {
+    display: block; // block
+}
